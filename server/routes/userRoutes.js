@@ -60,7 +60,8 @@ userRouter.route('/:userId')
           model.set('messages', [message]);
         } else {
           
-           model.set('messages', JSON.stringify([message]));
+           console.log(JSON.stringify(model.attributes.messages));
+           model.set('messages', model.attributes.messages + ', ' + JSON.stringify(message));
         }
         model.save();
       });

@@ -22,7 +22,8 @@ class Inbox extends Component {
   socket = {};
   componentWillMount() {
     console.log(this.props);
-    this.state.messages.push(JSON.parse(this.props.messages));
+    const messages = this.props.messages.split(" ");
+    this.state.messages.push(messages);
   }
   sendHandler(message) {
     this.state.message_id += 1;
@@ -53,7 +54,7 @@ class Inbox extends Component {
     return (
       <div className="container">
         <h3>Leo's Socket.io</h3>
-        <MessageList messages={this.state.messages} />
+        <MessageList messages={this.state.messages} userInfo={this.props.display_name} />
         <ChatInput onSend={this.sendHandler} />
       </div>
     );

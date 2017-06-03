@@ -101,7 +101,7 @@ export const createEvent = (event) => {
     fetch('/events', {
       method: 'POST',
       credentials: 'include',
-      headers: { 'Content-Type': 'application/json' },
+      dataType: 'json',
       body: JSON.stringify(event),
     })
     .then(resp => resp.json())
