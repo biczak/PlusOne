@@ -2,14 +2,12 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { compose, createStore, applyMiddleware } from 'redux';
-import {persistStore, autoRehydrate} from 'redux-persist'
+import { persistStore, autoRehydrate } from 'redux-persist'
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import reduxLogger from 'redux-logger';
 // Import Local Dependencies
 import reducers from './reducers/rootReducer';
 import Routes from './routes/Routes';
-import { fetchEvents, selectEvent } from './actions/eventActions.js';
 import { getInitialEvents } from './utils/utils';
 
 // Create the Store
