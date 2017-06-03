@@ -9,10 +9,11 @@ import App from '.././containers/App';
 import Profile from '.././containers/Profile';
 
 import Events from '../containers/Events';
-import Survey from '../containers/Survey';
+import EditForm from '../containers/EditForm';
 import UserEvents from '../containers/UserEvents';
 import EventForm from '../components/EventForm';
 import EditProfile from '../containers/EditProfile';
+import Inbox from '../containers/Inbox';
 import { loginUser } from '../actions/actions.js';
 
 class Routes extends React.Component {
@@ -25,11 +26,12 @@ class Routes extends React.Component {
       <HashRouter basename="/" component={App}>
         <Switch>
           <Route path="/eventForm" component={EventForm} />
-          <Route path="/users" component={Profile} />
-          <Route path="/edit" component={EditProfile} />>
+          <Route path="/profile" component={Profile} />
+          <Route path="/edit" component={EditProfile} />
           <Route path="/events" component={Events} />
-          <Route path="/survey" component={Survey} />
+          <Route path="/editForm" component={EditForm} />
           <Route path="/userEvents" component={UserEvents} />
+          <Route path="/inbox" component={Inbox} />
           <Route path="/" component={App} />
         </Switch>
       </HashRouter>

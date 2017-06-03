@@ -6,7 +6,7 @@ import { updateUserInfo } from '../actions/actions';
 
 import SurveyComponent from '../components/Survey';
 
-class Survey extends React.Component {
+class EditForm extends React.Component {
   constructor(props) {
     console.log(props)
     super(props);
@@ -80,4 +80,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Survey);
+)(EditForm);

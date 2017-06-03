@@ -14,7 +14,8 @@ import $ from 'jquery';
 // Import Local Components
 import MenuBar from '../components/MenuBar';
 import UserEvents from './UserEvents';
-import Survey from './Survey';
+import EditForm from './EditForm';
+import Inbox from './Inbox';
 import EditProfile from './EditProfile';
 import '../../public/styles/profile.scss';
 
@@ -34,7 +35,9 @@ class Profile extends Component {
     if (this.state.activeItem === 'events') {
       return <UserEvents />;
     } else if (this.state.activeItem === 'edit') {
-      return <Survey />;
+      return <EditForm />;
+    } else if (this.state.activeItem === 'inbox') {
+      return <Inbox />;
     }
     return this.props.user[this.state.activeItem];
   }
@@ -84,6 +87,7 @@ class Profile extends Component {
                   <Menu.Item name="ratings" active={activeItem === 'ratings'} onClick={this.handleItemClick} />
                   <Menu.Item name="events" active={activeItem === 'events'} onClick={this.handleItemClick} />
                   <Menu.Item name="edit" active={activeItem === 'edit'} onClick={this.handleItemClick} />
+                  <Menu.Item name="inbox" active={activeItem === 'inbox'} onClick={this.handleItemClick} />
                 </Menu>
                 <Button.Group fluid>
                   <Button color="blue" size="large" className="editProfile-button" onClick={this.editProfile}>

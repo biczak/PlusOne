@@ -12,7 +12,7 @@ import $ from 'jquery';
 // Import Local Components
 import MenuBar from '../components/MenuBar';
 import UserEvents from './UserEvents';
-import Survey from './Survey';
+import EditForm from './EditForm';
 import { updateUserInfo } from '../actions/actions';
 import '../../public/styles/profile.scss';
 

@@ -8,6 +8,12 @@ const user = (state = initalState, action) => {
     case 'UPDATE_USER':
       console.log('Update user reducer called');
       return Object.assign({}, state, action.user);
+    case 'SEND_MESSAGE':
+      console.log('Send Message Reducer Called!', action, state);
+      return {
+        ...state,
+        messages: [action.payload.message],
+      };
     default:
       return state;
   }

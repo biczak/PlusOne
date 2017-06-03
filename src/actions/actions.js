@@ -1,7 +1,7 @@
 
 // Import Moment
 import moment from 'moment';
-
+import $ from 'jquery';
 // User Actions
 
 
@@ -58,6 +58,20 @@ export function deleteEvent(event) {
     .catch(err => console.error(err));
   };
 }
+
+export function sendMessage(message) {
+  return ({
+    type: 'SEND_MESSAGE',
+    payload: message,
+  });
+}
+export function sendToUser(message) {
+  console.log(message, typeof message);
+  $.post(`/users/${message.targetUser}`, { message }, (data) => {
+    console.log(data);
+  });
+}
+
 // Event Actions
 
 export const getEvents = ({ data }) => {

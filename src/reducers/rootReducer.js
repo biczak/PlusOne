@@ -8,7 +8,7 @@ import user from './user';
 // Create the Root Reducer
 const rootReducer = combineReducers({
   events,
-  user
+  user,
 });
 
 export default rootReducer;

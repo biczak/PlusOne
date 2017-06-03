@@ -52,6 +52,19 @@ userRouter.route('/:userId')
    * Respond with different information if the request is made by the user, another user,
    * or someone who is not logged in?
    */
+  .post((req, res) => {
+    const message = JSON.parse(JSON.stringify(req.body.message));
+    new User().where({ id: message.targetUser }).fetch()
+      .then((model) => {
+        if (model.attributes.messages === '') {
+          model.set('messages', [message]);
+        } else {
+          
+           model.set('messages', JSON.stringify([message]));
+        }
+        model.save();
+      });
+  })
   .get((req, res) => {
       new User({id: req.params.userId}).fetch()
         .then(model => {
@@ -78,6 +91,5 @@ userRouter.route('/:userId')
         res.send(model);
       })
   });
-
 
 module.exports = userRouter;
