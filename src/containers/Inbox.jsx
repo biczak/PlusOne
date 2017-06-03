@@ -28,7 +28,7 @@ class Inbox extends Component {
   sendHandler(message) {
     this.state.message_id += 1;
     const messageObject = {
-      username: this.props.username,
+      username: this.props.display_name,
       message,
       targetUser: this.state.targetUser,
     };

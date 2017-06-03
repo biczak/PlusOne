@@ -1,8 +1,8 @@
 // Import React Dependencies
-import React from 'react';
-
+import React, { Component } from 'react';
+import { Redirect } from 'react-router';
 // Import Semantic-UI Components
-import { Grid, Header, Popup } from 'semantic-ui-react';
+import { Grid, Header, Button } from 'semantic-ui-react';
 
 // Import Local Dependencies
 import LoginModal from './LoginModal.jsx';
@@ -10,14 +10,19 @@ import LoginModal from './LoginModal.jsx';
 import '../../public/styles/login.scss';
 
 
-class Login extends React.Component {
+class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
       showAbout: false,
     };
+    this.showEvents = this.showEvents.bind(this);
   }
-  
+
+  showEvents() {
+    window.location = '/#/events';
+  }
+
   render() {
     return (
       <div className="login-container">
@@ -39,7 +44,9 @@ class Login extends React.Component {
                 </Header.Subheader>
               </Header>
               <Grid.Row>
-                <Popup trigger={<LoginModal />} />
+                <Button onClick={this.showEvents} className="splash-button">
+                  Let's Go!
+                </Button>
               </Grid.Row>
             </Grid.Column>
           </Grid>

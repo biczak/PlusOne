@@ -52,7 +52,7 @@ $green: #53FF45;
   }
   &:hover {
     background-color: $green;
-    color: rgba(0, 0, 0, 0.5);
+    color: $blue;
     &:before {
       transform: skewX(-45deg) translateX(13.5em);
      transition: all 0.5s ease-in-out;

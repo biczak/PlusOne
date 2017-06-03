@@ -27,12 +27,12 @@ class MessageList extends React.Component {
       let str = '';
       let flag = false;
       let stepOne = msg.split(":");
-      let stepTwo = stepOne.toString().split('","');
+      let messageData = stepOne.toString().split('","');
       console.log(stepTwo);
         return (
           <Message
             username={this.props.userInfo}
-            message={stepTwo[1]}
+            message={messageData[2]}
             fromMe={this.props.messages.fromMe} />
         );
       });
