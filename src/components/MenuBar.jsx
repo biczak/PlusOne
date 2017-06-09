@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Cookies from 'universal-cookie';
-
+import $ from 'jquery';
 // Import Semantic-UI Dependencies
 import { Menu, Image, Button, Icon, Header } from 'semantic-ui-react';
 import EventForm from './EventForm.jsx';
@@ -22,7 +22,9 @@ class MenuBar extends Component {
     this.handleItemClick = this.handleItemClick.bind(this);
   }
 
-  componentWillMount = () => this.getUserStatus();
+  componentWillMount = () => {
+    this.getUserStatus();
+  }
 
   getUserStatus= () => {
     let { activeItem } = this.state.activeItem;
@@ -74,6 +76,24 @@ class MenuBar extends Component {
   }
 
   render= () => {
+    let color = Math.floor((Math.random() * 10) + 1);
+    let headerColor;
+    if (color % 2 === 0) {
+      headerColor = '#247BA0';
+    } else {
+      headerColor = '#F9575F';
+    }
+    const headerStyle = {
+      color: headerColor,
+      fontFamily: 'Bungee Shade',
+      fontSize: '36px',
+      display: 'flex',
+      justifyContent: 'center',
+      position: 'absolute',
+      left: '50%',
+      transform: 'translateX(-50%)',
+    };
+
     const { activeItem } = this.state.activeItem;
     return (
       <div>
@@ -86,9 +106,7 @@ class MenuBar extends Component {
             Events
           </Menu.Item>
           <Header className="menu-logo">
-            <Header.Content className="menu-logo-v">
-              V
-            </Header.Content>
+            <Header.Content style={headerStyle} className="menu-bar-logo">EleventHour</Header.Content>
           </Header>
           {this.state.menuButton}
         </Menu>

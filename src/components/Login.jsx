@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router';
 // Import Semantic-UI Components
-import { Container, Grid, Header, Button, Form, Icon } from 'semantic-ui-react';
+import { Container, Grid, Header, Button, Form, Icon, Image } from 'semantic-ui-react';
 import SweetScroll from 'sweet-scroll';
 // Import Local Dependencies
 import LoginModal from './LoginModal.jsx';
@@ -57,7 +57,7 @@ class Login extends Component {
               <Grid.Column width={16}>
                 <Header size="huge" textAlign="center" className="login-header">
                   <Header.Content className="login-header">
-                    El<span className="logo-event">e<Header.Content className="logo-v">V</Header.Content>ent</span>Hour
+                    El<span className="logo-event">e<Image src="http://i.imgur.com/SfI8xhk.png" inline className="logo-v" /><Image src="http://i.imgur.com/Us08QTR.png" inline className="logo-v-minute" />ent</span>Hour
                   </Header.Content>
                   <Header.Subheader className="subHeader" className="login-subHeader">
                     Find people. Fill your group. Do the things you love.

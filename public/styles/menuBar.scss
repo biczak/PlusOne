@@ -24,7 +24,12 @@ a.menuBarButton:active {
   align-items: center;
   margin: auto !important;
 }
-
+.menu-bar-logo {
+  font-family: 'Bungee Shade';
+  font-size: 36px;
+  display: flex;
+  justify-content: center;
+}
 .menu-logo-v {
   transform: rotate(-18deg);
   font-family: $graduate;

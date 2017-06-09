@@ -48,7 +48,6 @@ class Inbox extends Component {
       });
   }
   newMessage(message) {
-    console.log('SOCKET.IO TRIGGERED');
     const messages = this.state.messages;
     messages.push(message);
     this.setState({ messages });

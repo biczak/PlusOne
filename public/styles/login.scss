@@ -25,7 +25,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-animation-name: background;
+  -webkit-animation-duration: 2s;
 }
 
 .zipcode-field {
@@ -42,12 +44,86 @@ body {
   font-weight: 400;
 }
 .logo-v {
-  font-size: 140px;
-  transform: rotate(-18deg);
-  color: $salmon;
-  text-shadow: -1px 0 $blue, 0 1px $blue, 1px 0 $blue, 0 -1px $blue;
+  height: 110px;
+  position: relative;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+  width: auto;
+  text-shadow: -1px 0 $offwhite, 0 1px $offwhite, 1px 0 $offwhite, 0 -1px $offwhite;
+}
+.logo-v-minute {
+  height: 140px;
+  width: auto;
+  z-index: 0;
+  position: relative;
+  top: -3px;
+  text-shadow: -1px 0 $offwhite, 0 1px $offwhite, 1px 0 $offwhite, 0 -1px $offwhite;
+  -webkit-animation-name: logoEvent; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 2s;
+  -webkit-transform-origin: bottom;
+  animation: time 2s linear;
+    &:before {
+      position: absolute;
+      content: "";
+      background: #fd1111;
+      height: 45px;
+      width: 2px;
+      top: 45px;
+    }
+}
+.login-header {
+  font-size: 120px;
+  font-family: 'Bungee Shade'; 
+  color: black;
+  vertical-align: baseline !important;
+  -webkit-animation-name: logoWord; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 2s;
+  text-shadow: -1px 0 $offwhite, 0 1px $offwhite, 1px 0 $offwhite, 0 -1px $offwhite;
+}
+
+@keyframes time {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes background {
+  0% {background-color: rgba(0, 0, 0, 0.5);}
+  25% {background-color: rgba(0, 0, 0, 0.5);}
+  30% {background-color: rgba(0, 0, 0, 0.5);}
+  50% {background-color: rgba(0, 0, 0, 0.5);}
+  75% {background-color: rgba(0, 0, 0, 0.5);}
+  80% {background-color: rgba(0, 0, 0, 0.5);}
+  85% {background-color: rgba(0, 0, 0, 0.5);}
+  90% {background-color: rgba(0, 0, 0, 0.5);}
+  95% {background-color: rgba(0, 0, 0, 0.5);}
+  100% {background-color: rgba(0, 0, 0, 0);}
+  
+}
+@keyframes logoWord {
+    0%   {text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;}
+    25%  {text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;}
+    30%  {text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;}
+    50%  {text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;}
+    75%  {text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;}
+    80%  {text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;}
+    85%  {text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;}
+    90%  {text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;}
+    95%  {text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;}
+    100% {text-shadow: -1px 0 $offwhite, 0 1px $offwhite, 1px 0 $offwhite, 0 -1px $offwhite;}
+}
+@keyframes logoEvent {
+    0%   {text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;}
+    20%   {text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;}
+    25%  {text-shadow: -1px 0 $offwhite, 0 1px $offwhite, 1px 0 $offwhite, 0 -1px $offwhite;}
+    50%  {text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;}
+    65%   {text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;}
+    70%  {text-shadow: -1px 0 $offwhite, 0 1px $offwhite, 1px 0 $offwhite, 0 -1px $offwhite;}
+    100% {text-shadow: -1px 0 $offwhite, 0 1px $offwhite, 1px 0 $offwhite, 0 -1px $offwhite;}
 }
 .logo-event {
+  -webkit-animation-name: logoEvent; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 2s;
   text-shadow: -1px 0 $offwhite, 0 1px $offwhite, 1px 0 $offwhite, 0 -1px $offwhite;
 }
 .team {
@@ -132,19 +208,11 @@ body {
   align-items: center;
 }
 
-.login-header {
-  font-size: 120px;
-  font-family: $graduate;  
-  color: $lightblue;
-  text-shadow: -1px 0 $offwhite, 0 1px $offwhite, 1px 0 $offwhite, 0 -1px $offwhite;
-  vertical-align: baseline !important;
-}
-
 .ui.header .sub.header.login-subHeader {
-  font-family: $lato;
-  font-size: 24px;
-  color: $salmon;
-  text-shadow: -0.5px 0 $blue, 0 0.5px $blue, 0.5px 0 $blue, 0 -0.5px $blue;
+  font-family: $graduate;
+  font-size: 26px;
+  color: $offwhite;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 .footer-divider {
   position: relative;
